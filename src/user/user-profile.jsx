@@ -5,7 +5,7 @@ const Successuser = () => {
   return (
     <div >
         <h1>Login Success Page</h1>
-        <Link to='/user-login'>Logout</Link>
+        <Link to='/Homepage'>Logout</Link>
     </div>
   )
 }
