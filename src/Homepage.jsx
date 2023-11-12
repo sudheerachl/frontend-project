@@ -6,7 +6,7 @@ const HomePage = () => {
     <div className="HomePage">
       <h1>Home Page</h1>
       <div className="links">
-        <Link to="/login-doctor">Login doctor</Link>
+        <a href="https://frontend-project-aeu2oc4vl-cherukuri-lakshmi-sudheeras-projects.vercel.app/login-doctor">Login as Doctor</a>
         <Link to="/login-user">Login user</Link>
       </div>
     </div>
