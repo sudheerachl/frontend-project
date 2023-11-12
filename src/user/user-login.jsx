@@ -19,7 +19,7 @@ const Loginuser = () => {
             if(result.data === "Success"){
                 console.log("Login Success");
                 alert('Login successful!')
-                navigate('/success-user');
+                navigate('/profile-user');
             }
             else{
                 alert('Incorrect password! Please try again.');
