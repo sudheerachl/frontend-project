@@ -13,7 +13,7 @@ const Logindoctor = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post( 'https://backend-doc-04ay.onrender.com/login-doctor', {email, password})
+        axios.post( 'https://backend-user-bms6.onrender.com/login-doctor', {email, password})
         .then(result => {
             console.log(result);
             if(result.data === "Success"){
