@@ -6,8 +6,8 @@ const HomePage = () => {
     <div className="HomePage">
       <h1>Home Page</h1>
       <div className="links">
-        <Link to="/login-doctor">Login 1</Link>
-        <Link to="/login-user">Login 2</Link>
+        <Link to="http://localhost:3001/login-doctor">Login 1</Link>
+        <Link to="http://localhost:3001/login-user">Login 2</Link>
       </div>
     </div>
   );
