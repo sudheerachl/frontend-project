@@ -14,13 +14,13 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path='/' element={<Homepage/>}></Route>
-        <Route path='http://localhost:3001/signup-doctor' element={<Signupdoctor/>}></Route>
-        <Route path='https://frontend-project-3pq2kynq4-cherukuri-lakshmi-sudheeras-projects.vercel.app/login-doctor' element={<Logindoctor/>}></Route>
-        <Route path='http://localhost:3001/profile-doctor' element={<Successdoctor/>}></Route>
-        <Route path='http://localhost:3001/signup-user' element={<Signupuser/>}></Route>
-        <Route path='http://localhost:3001/login-user' element={<Loginuser/>}></Route>
-        <Route path='http://localhost:3001/profile-user' element={<Successuser/>}></Route>
-        <Route path='http://localhost:3001/Homepage' element={<Homepage/>}></Route>
+        <Route path='/signup-doctor' element={<Signupdoctor/>}></Route>
+        <Route path='/login-doctor' element={<Logindoctor/>}></Route>
+        <Route path='/profile-doctor' element={<Successdoctor/>}></Route>
+        <Route path='/signup-user' element={<Signupuser/>}></Route>
+        <Route path='/login-user' element={<Loginuser/>}></Route>
+        <Route path='/profile-user' element={<Successuser/>}></Route>
+        <Route path='/Homepage' element={<Homepage/>}></Route>
 
       </Routes>
     </BrowserRouter>
