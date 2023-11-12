@@ -13,7 +13,7 @@ const Signupdoctor = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post( 'https://backend-doc-04ay.onrender.com/signup-doctor', {name, email, password})
+        axios.post( 'https://backend-user-bms6.onrender.com/signup-doctor', {name, email, password})
         .then(result => {
             console.log(result);
             if(result.data === "Already registered"){
