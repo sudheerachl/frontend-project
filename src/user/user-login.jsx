@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Loginuser = () => {
-    const [email, setEmail] = useState();
+    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const navigate = useNavigate();
 
@@ -36,15 +36,15 @@ const Loginuser = () => {
                     <h2 >Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div >
-                            <label htmlFor="exampleInputEmail1" >
-                                <strong>Email Id</strong>
+                            <label htmlFor="exampleInputUsername1" >
+                                <strong>Username</strong>
                             </label>
                             <input 
-                                type="email" 
-                                placeholder="Enter Email"
+                                type="username" 
+                                placeholder="Enter Username"
                                 className="form-control" 
-                                id="exampleInputEmail1" 
-                                onChange={(event) => setEmail(event.target.value)}
+                                id="exampleInputUsername1" 
+                                onChange={(event) => setUsername(event.target.value)}
                                 required
                             /> 
                         </div>
