@@ -16,7 +16,7 @@ const Signupdoctor = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('https://backend-user-bms6.onrender.com/signup-doctor', {
+    axios.post('https://backend-user-bms6.onrender.com/update-doctor', {
         name,
         username,
         phoneNumber,
@@ -26,9 +26,14 @@ const Signupdoctor = () => {
       })
       .then((result) => {
         console.log(result);
-
-        alert('Updated successfully!');
-        navigate('/profile-doctor');
+                if(result.data === "Success"){
+                console.log("Updated Successully.");
+                alert('Update successful!')
+                navigate('/profile-doctor');
+            }
+            else{
+                alert('Incorrect password! Please try again.');
+            }
       })
       .catch((err) => console.log(err));
   };
@@ -39,32 +44,7 @@ const Signupdoctor = () => {
         <div>
           <h2>Register</h2>
           <form onSubmit={handleSubmit}>
-            <div className="mb-3 text-start">
-              <label htmlFor="exampleInputEmail1">
-                <strong>Name</strong>
-              </label>
-              <input
-                type="text"
-                placeholder="Enter Name"
-                className="form-control"
-                id="exampleInputname"
-                onChange={(event) => setName(event.target.value)}
-                required
-              /> 
-            </div>
-            <div>
-              <label htmlFor="exampleInputEmail1">
-                <strong>Email Id</strong>
-              </label>
-              <input
-                type="email"
-                placeholder="Enter Email"
-                className="form-control"
-                id="exampleInputEmail1"
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              /> 
-            </div>
+            
             <div className="mb-3 text-start">
               <label htmlFor="exampleInputUsername">
                 <strong>Username</strong>
@@ -90,6 +70,32 @@ const Signupdoctor = () => {
                 onChange={(event) => setPassword(event.target.value)}
                 required
               />
+            </div>
+            <div className="mb-3 text-start">
+              <label htmlFor="exampleInputEmail1">
+                <strong>Name</strong>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                className="form-control"
+                id="exampleInputname"
+                onChange={(event) => setName(event.target.value)}
+                required
+              /> 
+            </div>
+            <div>
+              <label htmlFor="exampleInputEmail1">
+                <strong>Email Id</strong>
+              </label>
+              <input
+                type="email"
+                placeholder="Enter Email"
+                className="form-control"
+                id="exampleInputEmail1"
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              /> 
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputGender">
@@ -155,12 +161,10 @@ const Signupdoctor = () => {
 <button type="submit">Register</button>
 </form>
 
-<p>Already have an account?</p>
-<Link to="/login-doctor">Login</Link>
 </div>
 </div>
 </div>
 )
 }
 
-export default Signupdoctor
+export default Updatedoctor
