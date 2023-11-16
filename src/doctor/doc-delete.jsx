@@ -53,10 +53,10 @@ const DeleteUser = () => {
           required
         />
         <br />
-        <button type="submit">Delete User</button>
+        <button type="submit">Delete Your Account</button>
       </form>
     </div>
   );
 };
 
-export default DeleteUser;
+export default Deletedoctorr;
