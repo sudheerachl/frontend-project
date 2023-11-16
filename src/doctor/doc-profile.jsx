@@ -6,8 +6,8 @@ const Successdoctor = () => {
     <div >
         <h1>Login Success Page</h1>
         <Link to='/Homepage'>Logout</Link>
-        <Link to='/delete-doctor'>delete</Link>
-        <Link to='/update-doctor'>edit</Link>
+        <Link to='/delete-doctor'>     delete</Link>
+        <Link to='/update-doctor'>     edit</Link>
     </div>
   )
 }
