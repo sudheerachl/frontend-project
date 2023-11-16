@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const DeleteUser = () => {
+const DeleteDoctor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -59,4 +59,4 @@ const DeleteUser = () => {
   );
 };
 
-export default Deletedoctorr;
+export default DeleteDoctor;
