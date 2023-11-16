@@ -6,7 +6,7 @@ import Deletedoctor from './doctor/doc-delete';
 import Loginuser from './user/user-login';
 import Signupuser from './user/user-signup';
 import Successuser from './user/user-profile';
-import Deleteuser from './doctor/user-delete';
+import Deleteuser from './user/user-delete';
 
 import Homepage from './Homepage';
 import { HashRouter, Routes, Route } from 'react-router-dom';
