@@ -17,7 +17,7 @@ const DeleteUser = () => {
     });
 
     if (response.status === 200) {
-      alert('Doctor deleted successfully!');
+      alert('User deleted successfully!');
       setUsername('');
       setPassword('');
     } else {
