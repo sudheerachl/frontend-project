@@ -6,6 +6,8 @@ import Deletedoctor from './doctor/doc-delete';
 import Loginuser from './user/user-login';
 import Signupuser from './user/user-signup';
 import Successuser from './user/user-profile';
+import Deleteuser from './doctor/user-delete';
+
 import Homepage from './Homepage';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +23,7 @@ function App() {
         <Route path="/signup-user" element={<Signupuser />}></Route>
         <Route path="/login-user" element={<Loginuser />}></Route>
         <Route path="/profile-user" element={<Successuser />}></Route>
+        <Route path="/delete-user" element={<Deleteuser />}></Route>
         <Route path="/Homepage" element={<Homepage />}></Route>
       </Routes>
     </HashRouter>
