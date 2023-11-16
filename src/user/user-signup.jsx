@@ -8,6 +8,9 @@ const Signupuser = () => {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+     const [username, setUsername] = useState();
+    const [gender, setGender] = useState();
+    const [phoneNumber, setPhoneNumber] = useState();
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
