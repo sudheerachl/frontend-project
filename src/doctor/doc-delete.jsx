@@ -9,7 +9,7 @@ const DeleteUser = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.delete(`api/users/${username}`, {
+      const response = await axios.delete('https://backend-user-bms6.onrender.com/delete-doctor', {
         data: {
           password: password,
         },
