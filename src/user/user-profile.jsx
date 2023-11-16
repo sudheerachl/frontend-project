@@ -6,6 +6,7 @@ const Successuser = () => {
     <div >
         <h1>Login Success Page</h1>
         <Link to='/Homepage'>Logout</Link>
+      <Link to='/delete-user'>     delete</Link>
     </div>
   )
 }
