@@ -13,21 +13,25 @@ const Signupuser = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post( 'https://backend-user-bms6.onrender.com/signup-user', {name, email, password})
-        .then(result => {
-            console.log(result);
-            if(result.data === "Already registered"){
-                alert("E-mail already registered! Please Login to proceed.");
-                navigate('/login-user');
-            }
-            else{
-                alert("Registered successfully! Please Login to proceed.")
-                navigate('/login-user');
-            }
-            
-        })
-        .catch(err => console.log(err));
+      axios.post('https://backend-user-bms6.onrender.com/signup-user', { name, username, phoneNumber, gender, email, password })
+  .then(result => {
+    console.log(result);
+
+    if (result.data === 'Username already registered') {
+      alert('Username already registered! Please try a different username.');
+      return;
     }
+
+    if (result.data === 'Email already registered') {
+      alert('E-mail already registered! Please try a different email address.');
+      return;
+    }
+
+    alert('Registered successfully! Please Login to proceed.');
+    navigate('/login-user');
+  })
+  .catch(err => console.log(err));
+
 
 
     return (
