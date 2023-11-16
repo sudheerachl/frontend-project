@@ -40,7 +40,7 @@ const Loginuser = () => {
                                 <strong>Username</strong>
                             </label>
                             <input 
-                                type="username" 
+                                type="text" 
                                 placeholder="Enter Username"
                                 className="form-control" 
                                 id="exampleInputUsername1" 
