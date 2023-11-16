@@ -166,7 +166,7 @@ const Signupdoctor = () => {
 </form>
 
 <p>Already have an account?</p>
-<Link to="/login-user">Login</Link>
+<Link to="/login-doctor">Login</Link>
 </div>
 </div>
 </div>
