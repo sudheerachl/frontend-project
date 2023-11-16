@@ -19,7 +19,7 @@ const Logindoctor = () => {
             if(result.data === "Success"){
                 console.log("Login Success");
                 alert('Login successful!')
-                navigate('/profile-user');
+                navigate('/profile-doctor');
             }
             else{
                 alert('Incorrect password! Please try again.');
@@ -65,7 +65,7 @@ const Logindoctor = () => {
                     </form>
                     
                     <p >Don&apos;t have an account?</p>
-                    <Link to='/signup-user' >Register</Link>
+                    <Link to='/signup-doctor' >Register</Link>
                 </div>
             </div>
         </div>
