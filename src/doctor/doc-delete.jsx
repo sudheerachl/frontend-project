@@ -5,27 +5,29 @@ const DeleteUser = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+ const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    try {
-      const response = await axios.delete('https://backend-user-bms6.onrender.com/delete-doctor', {
-        data: {
-          password: password,
-        },
-      });
+  try {
+    const response = await axios.delete('https://backend-user-bms6.onrender.com/delete-doctor', {
+      data: {
+        username,
+        password,
+      },
+    });
 
-      if (response.status === 200) {
-        alert('User deleted successfully!');
-        setUsername('');
-        setPassword('');
-      } else {
-        alert('Incorrect password or username. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error deleting user:', error);
+    if (response.status === 200) {
+      alert('Doctor deleted successfully!');
+      setUsername('');
+      setPassword('');
+    } else {
+      alert('Incorrect password or username. Please try again.');
     }
-  };
+  } catch (error) {
+    console.error('Error deleting doctor:', error);
+  }
+};
+
 
   return (
     <div>
