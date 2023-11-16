@@ -13,7 +13,7 @@ const Loginuser = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post( 'https://backend-user-bms6.onrender.com/login-user', {email, password})
+        axios.post( 'https://backend-user-bms6.onrender.com/login-user', {username, password})
         .then(result => {
             console.log(result);
             if(result.data === "Success"){
