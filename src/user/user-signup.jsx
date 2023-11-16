@@ -171,4 +171,7 @@ const Signupuser = () => {
 </div>
 </div>
 </div>
+)
+}
 
+export default Signupuser
