@@ -5,7 +5,7 @@ const DeleteDoctor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
- const handleSubmit = async (event) => {
+const handleSubmit = async (event) => {
   event.preventDefault();
 
   try {
@@ -20,15 +20,18 @@ const DeleteDoctor = () => {
       alert('Doctor deleted successfully!');
       setUsername('');
       setPassword('');
+    } else if (response.status === 404) {
+      alert('Doctor not found!');
     } else if (response.status === 401) {
-      alert('Doctor not found!'); }
-    else{
+      alert('Unauthorized access. Please log in again.');
+    } else {
       alert('Incorrect password or username. Please try again.');
     }
   } catch (error) {
     console.error('Error deleting doctor:', error);
   }
 };
+
 
 
   return (
