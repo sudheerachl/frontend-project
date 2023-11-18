@@ -60,4 +60,4 @@ const handleSubmit = async (event) => {
   );
 };
 
-export default DeleteDoctor;
+export default DeleteUser;
