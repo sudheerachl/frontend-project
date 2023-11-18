@@ -1,3 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Updatedoctor = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
