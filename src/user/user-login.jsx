@@ -21,9 +21,15 @@ const Loginuser = () => {
                 alert('Login successful!')
                 navigate('/profile-user');
             }
-            else{
+            else if(result.data.message === "Wrong password"){
                 alert('Incorrect password! Please try again.');
             }
+            else if(result.data.message === "User not found"){
+                alert('Username not found');
+            }
+            else{
+                 alert('error');}
+                
         })
         .catch(err => console.log(err));
     }
