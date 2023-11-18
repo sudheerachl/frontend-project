@@ -4,8 +4,7 @@ import axios from 'axios';
 const DeleteUser = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
- const handleSubmit = async (event) => {
+const handleSubmit = async (event) => {
   event.preventDefault();
 
   try {
@@ -13,22 +12,24 @@ const DeleteUser = () => {
       data: {
         username,
         password,
-      },
-    });
-
-    if (response.status === 200) {
+      },    });
+    
+    if (response.data.message === 'User deleted successfully') {
       alert('User deleted successfully!');
       setUsername('');
       setPassword('');
-    } else {
+    } else if (response.data.message === 'User not found') {
+      alert('User not found!');
+    } else if (response.data.message === 'Incorrect password') {
       alert('Incorrect password or username. Please try again.');
+    } else {
+      alert('An error occurred while deleting the doctor. Please try again.');
     }
   } catch (error) {
-    console.error('Error deleting doctor:', error);
+    console.error('Error deleting user:', error);
   }
 };
-
-
+       
   return (
     <div>
       <h2>Delete User</h2>
@@ -53,10 +54,10 @@ const DeleteUser = () => {
           required
         />
         <br />
-        <button type="submit">Delete User</button>
+        <button type="submit">Delete Your Account</button>
       </form>
     </div>
   );
 };
 
-export default DeleteUser;
+export default DeleteDoctor;
