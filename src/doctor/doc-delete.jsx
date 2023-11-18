@@ -16,7 +16,7 @@ const DeleteDoctor = () => {
         },
       });
 
-      if (response.status === 200) {
+      if (response.data.status === 'SUCCESS' {
         alert('Doctor deleted successfully!');
         setUsername('');
         setPassword('');
