@@ -18,12 +18,12 @@ const DeleteDoctor = () => {
 
       if (response.data.status === 'DOCTOR_NOT_FOUND') {
         alert('Doctor not found!');}
-      else if (response.data.status === 'SUCCESS' {
+      else if (response.data.status === 'SUCCESS' ){
         alert('Doctor deleted successfully!');
         setUsername('');
         setPassword('');
       }
-      } else if (response.data.status === 'INVALID_CREDENTIALS') {
+       else if (response.data.status === 'INVALID_CREDENTIALS') {
         alert('Incorrect password or username. Please try again.');
       } else {
         alert('An error occurred while deleting the doctor. Please try again.');
