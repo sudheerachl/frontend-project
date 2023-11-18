@@ -22,7 +22,7 @@ const handleSubmit = async (event) => {
       setPassword('');
     } else if (response.status === 404) {
       alert('Doctor not found!');
-    } else if (response.status === 401) {
+    } else if (response.status === 422) {
       alert('Unauthorized access. Please log in again.');
     } else {
       alert('Incorrect password or username. Please try again.');
