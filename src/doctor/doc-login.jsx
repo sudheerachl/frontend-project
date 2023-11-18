@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import jwt from 'jsonwebtoken';
+
 import useToken from './useToken'; // Import the useToken hook
 
 const Logindoctor = () => {
@@ -19,11 +19,7 @@ const Logindoctor = () => {
         console.log(result);
         if (result.data.accessToken) {
           console.log('Login Success');
-          const decodedToken = jwt.decode(result.data.accessToken);
-  const username = decodedToken.username;
-
-  // Display the username as part of the alert message
-  alert(`Token successful! Welcome, ${username}`);
+          alert(`Login successful! Welcome`);
           setTokenFromLogin(result.data.accessToken); // Set the token using the setTokenFromLogin function
           navigate('/profile-doctor');
         } else if (result.data.message === 'Wrong password') {
