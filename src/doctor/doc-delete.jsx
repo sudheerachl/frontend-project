@@ -5,32 +5,32 @@ const DeleteDoctor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-try {
-  const response = await axios.delete('https://backend-user-bms6.onrender.com/delete-doctor', {
-    data: {
-      username,
-      password,
-    },
-  });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  if (response.status === 200) {
-    alert('Doctor deleted successfully!');
-    setUsername('');
-    setPassword('');
-  } else if (response.status === 404) {
-    alert('Doctor not found!');
-  } else if (response.status === 422) {
-    alert('Unauthorized access. Please log in again.');
-  } else {
-    alert('Incorrect password or username. Please try again.');
-  }
-} catch (error) {
-  console.error('Error deleting doctor:', error);
-}};
+    try {
+      const response = await axios.delete('https://backend-user-bms6.onrender.com/delete-doctor', {
+        data: {
+          username,
+          password,
+        },
+      });
 
-
+      if (response.status === 200) {
+        alert('Doctor deleted successfully!');
+        setUsername('');
+        setPassword('');
+      } else if (response.data.status === 'DOCTOR_NOT_FOUND') {
+        alert('Doctor not found!');
+      } else if (response.data.status === 'INVALID_CREDENTIALS') {
+        alert('Incorrect password or username. Please try again.');
+      } else {
+        alert('An error occurred while deleting the doctor. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error deleting doctor:', error);
+    }
+  };
 
   return (
     <div>
