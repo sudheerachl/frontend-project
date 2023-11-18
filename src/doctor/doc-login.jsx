@@ -24,7 +24,7 @@ const Logindoctor = () => {
             else if(result.data.message === "Wrong password"){
                 alert('Incorrect password! Please try again.');
             }
-            else if(result.data.message === "Wrong password"){
+            else if(result.data.message === "User not found"){
                 alert('Username not found');
             }
             else{
