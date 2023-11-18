@@ -14,13 +14,13 @@ const handleSubmit = async (event) => {
         password,
       },    });
     
-    if (response.data.messsage === 'Doctor deleted successfully') {
+    if (response.data.message === 'Doctor deleted successfully') {
       alert('Doctor deleted successfully!');
       setUsername('');
       setPassword('');
-    } else if (response.data.messsage === 'Doctor not found') {
+    } else if (response.data.message === 'Doctor not found') {
       alert('Doctor not found!');
-    } else if (response.data.messsage === 'Incorrect password') {
+    } else if (response.data.message === 'Incorrect password') {
       alert('Incorrect password or username. Please try again.');
     } else {
       alert('An error occurred while deleting the doctor. Please try again.');
