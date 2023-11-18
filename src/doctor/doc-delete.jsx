@@ -16,15 +16,16 @@ const DeleteDoctor = () => {
 
       if (response.data.status === 'DOCTOR_NOT_FOUND') {
         alert('Doctor not found!');}
-      if (response.data.status === 'SUCCESS' ){
+      else if (response.data.status === 'SUCCESS' ){
         alert('Doctor deleted successfully!');
         setUsername('');
         setPassword('');
       }
-      if (response.data.status === 'INVALID_CREDENTIALS') {
+     else if (response.data.status === 'INVALID_CREDENTIALS') {
         alert('Incorrect password or username. Please try again.');
       } 
-      
+    else{alert('error. Please try again.');
+      }          
    
   };
 
