@@ -1,9 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
 const Updatedoctor = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,31 +7,29 @@ const Updatedoctor = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    axios.post('https://backend-user-bms6.onrender.com/update-doctor', {
+    try {
+      const result = await axios.post('https://backend-user-bms6.onrender.com/update-doctor', {
         name,
         username,
         phoneNumber,
         gender,
         email,
         password,
-      })
-      .then((result) => {
-        console.log(result);
-                if(result.data === "Success"){
-                console.log("Updated Successully.");
-                alert('Update successful!')
-                navigate('/profile-doctor');
-            }
-            else{
-                alert('Incorrect password! Please try again.');
-            }
-      })
-      .catch((err) => console.log(err));
-  };
+      });
 
+      if (result.data.message === 'Doctor information updated successfully') {
+        alert('Update successful!');
+        navigate('/profile-doctor');
+      } else {
+        alert('Incorrect password! Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating doctor information:', error);
+    }
+  };
   return (
     <div>
       <div>
