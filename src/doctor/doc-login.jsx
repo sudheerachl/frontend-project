@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 import useToken from './useToken'; // Import the useToken hook
 
 const Logindoctor = () => {
