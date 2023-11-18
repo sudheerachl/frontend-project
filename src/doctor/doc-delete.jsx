@@ -20,8 +20,8 @@ const DeleteDoctor = () => {
       alert('Doctor deleted successfully!');
       setUsername('');
       setPassword('');
-    } else if (response.status === 200) {
-      alert('Doctor noot found!'); }
+    } else if (response.status === 404) {
+      alert('Doctor not found!'); }
     else{
       alert('Incorrect password or username. Please try again.');
     }
