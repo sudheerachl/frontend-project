@@ -8,7 +8,7 @@ const Successdoctor = () => {
         <Link to='/Homepage'>Logout</Link>
         <Link to='/delete-doctor'>     delete</Link>
         <Link to='/update-doctor'>     edit</Link>
-        <Link to='/info-doctor'>     view</Link>
+    
     </div>
   )
 }
