@@ -23,7 +23,7 @@ function App() {
         <Route path="/profile-doctor" element={<Successdoctor />}></Route>
         <Route path="/delete-doctor" element={<Deletedoctor />}></Route>
         <Route path="/update-doctor" element={<Updatedoctor />}></Route>
-        //<Route path="/info-doctor" element={<Infodoctor />}></Route>
+      
         <Route path="/signup-user" element={<Signupuser />}></Route>
         <Route path="/login-user" element={<Loginuser />}></Route>
         <Route path="/profile-user" element={<Successuser />}></Route>
