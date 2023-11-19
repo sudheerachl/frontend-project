@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useToken } from './useToken';
 import axios from 'axios';
 
-const Infodoc = () => {
+const Infodoctor = () => {
   const [userData, setUserData] = useState({});
   const { token } = useToken();
 
@@ -41,4 +41,4 @@ const Infodoc = () => {
   );
 };
 
-export default Infodoc;
+export default Infodoctor;
