@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Logindoctor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState(null); // Replace useToken hook with local state for token
+  const [token, setToken] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -18,18 +18,33 @@ const Logindoctor = () => {
         if (result.data.accessToken) {
           console.log('Login Success');
           alert(`Login successful! Welcome`);
-          setToken(result.data.accessToken); // Set token in local state
-          localStorage.setItem('token', result.data.accessToken); // Store token in localStorage for persistence
+          setToken(result.data.accessToken);
+          localStorage.setItem('token', result.data.accessToken);
+          alert(`Your username is: ${result.data.username}`);
           navigate('/profile-doctor');
         } else if (result.data.message === 'Wrong password') {
           alert('Incorrect password! Please try again.');
         } else if (result.data.message === 'User not found') {
           alert('Username not found');
         } else {
-          alert('Error occurred!');
+          console.error('Error logging in');
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
+  };
+
+  const fetchProtectedData = async () => {
+    try {
+      const response = await axios.get('https://backend-user-bms6.onrender.com/protected', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching protected data:', error);
+    }
   };
 
   return (
@@ -71,6 +86,8 @@ const Logindoctor = () => {
           <Link to="/signup-doctor">Register</Link>
         </div>
       </div>
+
+      <button onClick={fetchProtectedData}>Fetch Protected Data</button>
     </div>
   );
 };
