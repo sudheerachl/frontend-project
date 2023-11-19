@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import useToken from './useToken'; // Import the useToken hook
-
 const Logindoctor = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { token, setTokenFromLogin } = useToken(); // Access token and setTokenFromLogin function from the useToken hook
+  const [token, setToken] = useState(null); // Replace useToken hook with local state for token
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -20,7 +18,8 @@ const Logindoctor = () => {
         if (result.data.accessToken) {
           console.log('Login Success');
           alert(`Login successful! Welcome`);
-          setTokenFromLogin(result.data.accessToken); // Set the token using the setTokenFromLogin function
+          setToken(result.data.accessToken); // Set token in local state
+          localStorage.setItem('token', result.data.accessToken); // Store token in localStorage for persistence
           navigate('/profile-doctor');
         } else if (result.data.message === 'Wrong password') {
           alert('Incorrect password! Please try again.');
