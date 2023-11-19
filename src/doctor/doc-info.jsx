@@ -1,32 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useToken } from './useToken';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 const Infodoctor = () => {
   const [userData, setUserData] = useState({});
-  const { token } = useToken();
+  const [token] = useState(localStorage.getItem('token'));
 
   useEffect(() => {
     if (!token) {
       return;
     }
 
-    const fetchProfileData = async () => {
-      try {
-        const response = await axios.get('https://backend-user-bms6.onrender.com', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        const data = response.data;
-        setUserData(data);
-      } catch (error) {
-        console.error('Error fetching profile data:', error);
-      }
-    };
-
-    fetchProfileData();
+    const decodedToken = jwt.decode(token);
+    const { username, email, phoneNumber, name, gender } = decodedToken;
+    setUserData({ username, email, phoneNumber, name, gender });
   }, [token]);
 
   return (
@@ -37,7 +24,7 @@ const Infodoctor = () => {
       <p>Phone Number: {userData.phoneNumber}</p>
       <p>Name: {userData.name}</p>
       <p>Gender: {userData.gender}</p>
-      </div>
+    </div>
   );
 };
 
