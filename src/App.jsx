@@ -4,7 +4,7 @@ import Signupdoctor from './doctor/doc-signup';
 import Successdoctor from './doctor/doc-profile';
 import Deletedoctor from './doctor/doc-delete';
 import Updatedoctor from './doctor/doc-update';
-
+import Infodoctor from './doctor/doc-info';
 import Loginuser from './user/user-login';
 import Signupuser from './user/user-signup';
 import Successuser from './user/user-profile';
@@ -23,7 +23,7 @@ function App() {
         <Route path="/profile-doctor" element={<Successdoctor />}></Route>
         <Route path="/delete-doctor" element={<Deletedoctor />}></Route>
         <Route path="/update-doctor" element={<Updatedoctor />}></Route>
-      
+        <Route path="/info-doctor" element={<Infodoctor />}></Route>
         <Route path="/signup-user" element={<Signupuser />}></Route>
         <Route path="/login-user" element={<Loginuser />}></Route>
         <Route path="/profile-user" element={<Successuser />}></Route>
