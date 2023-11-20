@@ -32,19 +32,7 @@ const Logindoctor = () => {
       .catch((err) => console.error(err));
   };
 
-  const fetchProtectedData = async () => {
-    try {
-      const response = await axios.get('https://backend-user-bms6.onrender.com/protected', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      console.log(response.data);
-    } catch (error) {
-      console.error('Error fetching protected data:', error);
-    }
-  };
+  
 
   return (
     <div>
@@ -85,8 +73,6 @@ const Logindoctor = () => {
           <Link to="/signup-doctor">Register</Link>
         </div>
       </div>
-
-      <button onClick={fetchProtectedData}>Fetch Protected Data</button>
     </div>
   );
 };
