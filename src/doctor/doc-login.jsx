@@ -21,7 +21,7 @@ const Logindoctor = () => {
               alert(`Login successfull: ${username}`);
                 navigate('/profile-user');
             }
-        } else if (result.data.message === 'Wrong password') {
+         else if (result.data.message === 'Wrong password') {
           alert('Incorrect password! Please try again.');
         } else if (result.data.message === 'User not found') {
           alert('Username not found');
