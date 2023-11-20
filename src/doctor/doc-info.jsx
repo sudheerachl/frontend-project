@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
 
 const Infodoctor = () => {
-  const [userData, setUserData] = useState({});
-  const [token] = useState(localStorage.getItem('token'));
+  const [userDetails, setUserDetails] = useState(null);
+  const username = localStorage.getItem('username');
 
   useEffect(() => {
-    if (!token) {
-      return;
+    if (username) {
+      axios.get(`https://backend-user-bms6.onrender.com/${username}`)
+        .then((response) => {
+          console.log(response.data);
+          setUserDetails(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
+  }, [username]);
 
-    const decodedToken = jwt.decode(token);
-    const { username, email, phoneNumber, name, gender } = decodedToken;
-    setUserData({ username, email, phoneNumber, name, gender });
-  }, [token]);
+  if (!userDetails) {
+    return <div>Loading user details...</div>;
+  }
 
   return (
-    <div className="profile-container">
-      <h2>Profile</h2>
-      <p>Username: {userData.username}</p>
-      <p>Email: {userData.email}</p>
-      <p>Phone Number: {userData.phoneNumber}</p>
-      <p>Name: {userData.name}</p>
-      <p>Gender: {userData.gender}</p>
+    <div>
+      <h2>User Details</h2>
+      <p>Username: {userDetails.username}</p>
+      <p>Email: {userDetails.email}</p>
+      <p>Name: {userDetails.name}</p>
+      <p>Gender: {userDetails.gender}</p>
     </div>
   );
 };
