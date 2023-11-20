@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 const Infodoctor = () => {
   const [userDetails, setUserDetails] = useState(null);
   const username = localStorage.getItem('username');
