@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
 const Infodoctor = () => {
   const [userDetails, setUserDetails] = useState(null);
   const username = localStorage.getItem('username');
 
   useEffect(() => {
     if (username) {
-      axios.get(`https://backend-user-bms6.onrender.com/info-doctor`,{username})
+      axios.get(`https://backend-user-bms6.onrender.com/info-doctor/${username}`)
         .then((response) => {
           console.log(response.data);
           setUserDetails(response.data);
