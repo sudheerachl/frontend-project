@@ -19,7 +19,7 @@ const Logindoctor = () => {
                 console.log("Login Success");
                  localStorage.setItem('username', username);
               alert(`Login successfull: ${username}`);
-                navigate('/profile-user');
+                navigate('/profile-doctor');
             }
          else if (result.data.message === 'Wrong password') {
           alert('Incorrect password! Please try again.');
