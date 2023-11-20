@@ -15,13 +15,12 @@ const Logindoctor = () => {
     axios.post('https://backend-user-bms6.onrender.com/login-doctor', { username, password })
       .then((result) => {
         console.log(result);
-        if (result.data.accessToken) {
-          console.log('Login Success');
-          alert(`Login successful! Welcome`);
-          setToken(result.data.accessToken);
-          localStorage.setItem('token', result.data.accessToken);
-          alert(`Your username is: ${result.data.username}`);
-          navigate('/profile-doctor');
+        if(result.data === "Success"){
+                console.log("Login Success");
+                 localStorage.setItem('username', username);
+              alert(`Login successfull: ${username}`);
+                navigate('/profile-user');
+            }
         } else if (result.data.message === 'Wrong password') {
           alert('Incorrect password! Please try again.');
         } else if (result.data.message === 'User not found') {
